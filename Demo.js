@@ -1,6 +1,6 @@
-//p1 	
+	
 	// main menu
-	jQuery(document).ready(function() {
+jQuery(document).ready(function() {
     jQuery('.toggle-icon').click(function() {
         jQuery('.mega-menu').slideToggle(600);
     });
@@ -69,6 +69,16 @@
        }
     });
 
+    //Auto height set sticky
+    var videoheight = $('#home-video-player').height();
+    $(window).scroll(function() {
+        if ($(window).scrollTop() >=videoheight) {
+            $('.home header').addClass('fixed');
+        } else {
+            $('.home header').removeClass('fixed');
+        }
+    });
+
     //add class remove class in multiple item
     $("#donationForm label").on("click", function () {
       $("#donationForm label").removeClass("active_donate");
@@ -96,6 +106,16 @@
 	});	
 	
 });
+
+
+// Page rediraction add in Function file
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    // For the form at https://www.framefreakstudio.com/application/
+    if ( 2714 === event.detail.contactFormId ) {
+        location = 'https://www.framefreakstudio.com/thanks-app/';
+    }
+}, false );
+
 
 /*----------------------- Media Query ---------------------------*/
 
