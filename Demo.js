@@ -116,6 +116,16 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
     }
 }, false );
 
+// Add Active class in same class
+jQuery(document).ready(function($) {
+  $('.parent-class ul li').click(function() {
+    var index = $(this).index();
+    $('.parent-class ul li').removeClass('active');
+    $(this).addClass('active');
+    $('.test div').removeClass('active');
+    $('.test div').eq(index).addClass('active');
+  });
+})
 
 /*----------------------- Media Query ---------------------------*/
 
