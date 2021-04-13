@@ -1,4 +1,8 @@
-	
+// Section Move up down Jquery
+jQuery('#news-post-sec .elementor-post__meta-data:parent').each(function () {
+    jQuery(this).insertBefore(jQuery(this).prev('#news-post-sec .elementor-post__title'));
+});
+
 	// main menu
 jQuery(document).ready(function() {
     jQuery('.toggle-icon').click(function() {
