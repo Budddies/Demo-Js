@@ -130,3 +130,53 @@ jQuery(document).ready(function($) {
     $('.test div').eq(index).addClass('active');
   });
 })
+
+// hide one by one box when doing screen small
+jQuery(window).on('load resize', function() {
+    if(jQuery(window).height() < 762) {
+        jQuery('#home_section01 .newsblock_black:nth-child(3)').addClass('limit1200');
+    }else{
+        jQuery('#home_section01 .newsblock_black:nth-child(3)').removeClass('limit1200');
+    }
+
+	if(jQuery(window).height() < 602) {
+        jQuery('#home_section01 .newsblock_black:nth-child(4)').addClass('limit1200');
+    }else{
+        jQuery('#home_section01 .newsblock_black:nth-child(4)').removeClass('limit1200');
+    }
+
+	if(jQuery(window).height() < 406) {
+        jQuery('#home_section01 .newsblock_black:nth-child(2)').addClass('limit1200');
+    }else{
+        jQuery('#home_section01 .newsblock_black:nth-child(2)').removeClass('limit1200');
+    }
+})
+
+// In mobile device set section height in alll resolution with hide box [newsblock] is box
+jQuery(window).on('load resize', function() {
+	var clientWidth = jQuery(window).width();
+        if(clientWidth < 768){
+		var dheight = jQuery(window).height();
+		jQuery('#home_section01').css('height', dheight);
+
+		if(dheight <= 480){
+			jQuery('.newsblock_black:nth-child(3)').hide();
+			jQuery('.newsblock_black:nth-child(4)').hide();
+		}
+		if(dheight  >= 481 && dheight <= 666){
+			jQuery('.newsblock_black:nth-child(2)').hide();
+			jQuery('.newsblock_black:nth-child(4)').hide();
+		}
+		if(dheight  >= 667 && dheight <= 735){
+			jQuery('.newsblock_black:nth-child(2)').hide();
+		}
+		if(dheight  >= 720 && dheight <= 900){
+			jQuery('.newsblock_black:nth-child(2)').hide();
+			jQuery('.landingpage_content').addClass('fonts');
+			jQuery(".fonts h1").css({"font-size": "30px"});
+		}
+		if(dheight  >= 720 && dheight <= 900){
+			jQuery(".fonts h2").css({"font-size": "23px", "line-height": "26px", "margin-bottom": "5px"});
+		}
+	}
+});
