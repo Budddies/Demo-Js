@@ -209,3 +209,11 @@ function check_if_in_view() {
 
 $window.on('scroll resize', check_if_in_view);
 $window.trigger('scroll');
+
+
+$(window).scroll(function(){
+	if($(window).scrollTop() >= $("#shopify-cost-tbl").offset().top -100 + $("#shopify-cost-tbl").height() || $(window).scrollTop() < $("#shopify-cost-tbl").offset().top -110)
+		$('#shopify-cost-tbl thead').removeClass('fix');
+	else
+		$('#shopify-cost-tbl thead').addClass('fix');
+});
