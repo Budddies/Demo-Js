@@ -10,6 +10,17 @@ jQuery(window).scroll(function() {
 		});
 }).scroll();
 
+// add class on scroll and remove class after few sec
+jQuery(window).load(function() {
+    setTimeout(function() {
+        jQuery('body').addClass('hide-bg');
+    },2000);
+});
+
+jQuery(window).load(function() {
+    jQuery('body').addClass('animated-img');
+});
+
 
 // Section Move up down Jquery
 jQuery('#news-post-sec .elementor-post__meta-data:parent').each(function () {
