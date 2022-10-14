@@ -1,3 +1,16 @@
+// One section scroll add class 
+jQuery(window).scroll(function() {
+		var scrollDistance = jQuery(window).scrollTop();
+        
+		jQuery('.filter-section').each(function(i) {
+				if (jQuery(this).position().top <= scrollDistance) {
+						jQuery('.filter-section.active').removeClass('active-filter');
+						jQuery('.filter-section').eq(i).addClass('active-filter');
+				}
+		});
+}).scroll();
+
+
 // Section Move up down Jquery
 jQuery('#news-post-sec .elementor-post__meta-data:parent').each(function () {
     jQuery(this).insertBefore(jQuery(this).prev('#news-post-sec .elementor-post__title'));
