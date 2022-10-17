@@ -10,6 +10,17 @@ jQuery(window).scroll(function() {
 		});
 }).scroll();
 
+
+//Find the next element jquery
+$('li').click(function(){
+  active = $('.active').next();
+  if(active.length>0){
+    $('li').removeClass('active');
+    active.addClass('active');
+  }
+});
+
+
 // add class on scroll and remove class after few sec
 jQuery(window).load(function() {
     setTimeout(function() {
