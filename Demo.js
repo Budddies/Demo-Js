@@ -10,7 +10,7 @@ jQuery(window).scroll(function() {
 		});
 }).scroll();
 
-//Scroll slider 
+//Scroll slider // https://chainn.nl/en
 //https://podotti.wpengine.com/retail-services/
  let stickyMainNavLinks = document.querySelectorAll(".main-sticky-link");
         let stickyMainSections = document.querySelectorAll(".main-sticky-section");
