@@ -10,6 +10,28 @@ jQuery(window).scroll(function() {
 		});
 }).scroll();
 
+//Scroll slider 
+//https://podotti.wpengine.com/retail-services/
+ let stickyMainNavLinks = document.querySelectorAll(".main-sticky-link");
+        let stickyMainSections = document.querySelectorAll(".main-sticky-section");
+        window.addEventListener("scroll", event => {
+            let fromTop = window.scrollY;
+            var intViewportHeight = window.innerHeight;
+            var bannerHeight = jQuery(".who-main-banner-wrap").outerHeight();
+            stickyMainNavLinks.forEach(link => {
+                let section = document.querySelector(link.hash);
+                if (
+                    section.offsetTop - (intViewportHeight - bannerHeight - 500) <= fromTop &&
+                    section.offsetTop + section.offsetHeight - (intViewportHeight - bannerHeight - 500) > fromTop
+                ) {
+                    link.classList.add("current");
+                    section.classList.add("current");
+                } else {
+                    link.classList.remove("current");
+                    section.classList.remove("current");
+                }
+            });
+        });
 
 //Find the next element jquery
 $('li').click(function(){
